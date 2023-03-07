@@ -69,3 +69,4 @@ STM32F446_Linker_Startup/Debug/Src/subdir.mk
 STM32F446_Linker_Startup/Debug/Startup/subdir.mk
 STM32F446_Linker_Startup/Debug/objects.mk
 STM32F446_Linker_Startup/Debug/sources.mk
+.metadata

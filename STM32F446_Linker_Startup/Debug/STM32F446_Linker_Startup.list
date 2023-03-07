@@ -3,27 +3,226 @@ STM32F446_Linker_Startup.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000000  08000000  08000008  00010008  2**0
+  0 .text         00000274  08000000  08000000  00010000  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .init         00000004  08000000  08000000  00010000  2**2
+  1 .init         00000004  08000274  08000274  00010274  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .fini         00000004  08000004  08000004  00010004  2**2
+  2 .fini         00000004  08000278  08000278  00010278  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  3 .data         00000000  20000000  20000000  00010008  2**0
+  3 .data         00000190  20000000  0800027c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  4 .bss          00000000  00000000  00000000  00000000  2**0
+  4 .bss          00000320  20000190  20000190  00020190  2**2
                   ALLOC
-  5 .ARM.attributes 00000030  00000000  00000000  00010008  2**0
+  5 .ARM.attributes 00000030  00000000  00000000  00020190  2**0
                   CONTENTS, READONLY
+  6 .comment      00000053  00000000  00000000  000201c0  2**0
+                  CONTENTS, READONLY
+  7 .debug_info   000002a5  00000000  00000000  00020213  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  8 .debug_abbrev 0000015c  00000000  00000000  000204b8  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_aranges 00000050  00000000  00000000  00020614  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_ranges 00000030  00000000  00000000  00020664  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_macro  00001005  00000000  00000000  00020694  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_line   000007e6  00000000  00000000  00021699  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_str    00003d94  00000000  00000000  00021e7f  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_frame  00000094  00000000  00000000  00025c14  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+
+Disassembly of section .text:
+
+08000000 <VectorTable>:
+ 8000000:	00 00 02 20 e1 01 00 08 61 02 00 08 61 02 00 08     ... ....a...a...
+ 8000010:	61 02 00 08 61 02 00 08 61 02 00 08 04 00 00 00     a...a...a.......
+ 8000020:	67 02 00 08 67 02 00 08 04 00 00 00 67 02 00 08     g...g.......g...
+ 8000030:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000040:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000050:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000060:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000070:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000080:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000090:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 80000a0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 80000b0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 80000c0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 80000d0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 80000e0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 80000f0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000100:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000110:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000120:	67 02 00 08 67 02 00 08 04 00 00 00 04 00 00 00     g...g...........
+ 8000130:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000140:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000150:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000160:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+ 8000170:	67 02 00 08 04 00 00 00 04 00 00 00 67 02 00 08     g...........g...
+ 8000180:	04 00 00 00 04 00 00 00 67 02 00 08 04 00 00 00     ........g.......
+ 8000190:	04 00 00 00 04 00 00 00 67 02 00 08 67 02 00 08     ........g...g...
+ 80001a0:	67 02 00 08 67 02 00 08 67 02 00 08 67 02 00 08     g...g...g...g...
+
+080001b0 <main>:
+volatile uint32_t deneme_bss_2[100] = {0} ;
+volatile uint32_t deneme_data[100] = {0x20, 0x50, 0x50, 0x200};
+
+
+int main(void)
+{
+ 80001b0:	b480      	push	{r7}
+ 80001b2:	af00      	add	r7, sp, #0
+    /* Loop forever */
+	for(;;)
+	{
+		deneme_data[10]= deneme_bss_1[10];
+ 80001b4:	4b07      	ldr	r3, [pc, #28]	; (80001d4 <main+0x24>)
+ 80001b6:	6a9b      	ldr	r3, [r3, #40]	; 0x28
+ 80001b8:	4a07      	ldr	r2, [pc, #28]	; (80001d8 <main+0x28>)
+ 80001ba:	6293      	str	r3, [r2, #40]	; 0x28
+		deneme_bss_1[99]= 0x300;
+ 80001bc:	4b05      	ldr	r3, [pc, #20]	; (80001d4 <main+0x24>)
+ 80001be:	f44f 7240 	mov.w	r2, #768	; 0x300
+ 80001c2:	f8c3 218c 	str.w	r2, [r3, #396]	; 0x18c
+		deneme_bss_2[99]= 0x100;
+ 80001c6:	4b05      	ldr	r3, [pc, #20]	; (80001dc <main+0x2c>)
+ 80001c8:	f44f 7280 	mov.w	r2, #256	; 0x100
+ 80001cc:	f8c3 218c 	str.w	r2, [r3, #396]	; 0x18c
+		deneme_data[10]= deneme_bss_1[10];
+ 80001d0:	e7f0      	b.n	80001b4 <main+0x4>
+ 80001d2:	bf00      	nop
+ 80001d4:	20000190 	.word	0x20000190
+ 80001d8:	20000000 	.word	0x20000000
+ 80001dc:	20000320 	.word	0x20000320
+
+080001e0 <ResetHandler>:
+#include "stdint.h"
+#include "types.h"
+
+
+void ResetHandler(void)
+{
+ 80001e0:	b580      	push	{r7, lr}
+ 80001e2:	b086      	sub	sp, #24
+ 80001e4:	af00      	add	r7, sp, #0
+	extern unsigned int *_end_of_text_section   ;
+	extern unsigned int *_end_of_data_section_  ;
+	extern unsigned int *_end_of_bss_section_   ;
+	extern unsigned int *_start_of_bss_section_ ;
+
+	uint8_t  *pC_AddrPointer = (uint8_t*)&_start_of_bss_section_;
+ 80001e6:	4b19      	ldr	r3, [pc, #100]	; (800024c <ResetHandler+0x6c>)
+ 80001e8:	60fb      	str	r3, [r7, #12]
+
+	/* Init .bss by 0 value */
+	for (uint32_t size_of_ram_byte = 0; size_of_ram_byte < ((uint32_t)&_end_of_bss_section_ - (uint32_t)&_start_of_bss_section_); size_of_ram_byte++)
+ 80001ea:	2300      	movs	r3, #0
+ 80001ec:	617b      	str	r3, [r7, #20]
+ 80001ee:	e007      	b.n	8000200 <ResetHandler+0x20>
+	{
+		*(pC_AddrPointer + size_of_ram_byte) = (uint8_t)0;
+ 80001f0:	68fa      	ldr	r2, [r7, #12]
+ 80001f2:	697b      	ldr	r3, [r7, #20]
+ 80001f4:	4413      	add	r3, r2
+ 80001f6:	2200      	movs	r2, #0
+ 80001f8:	701a      	strb	r2, [r3, #0]
+	for (uint32_t size_of_ram_byte = 0; size_of_ram_byte < ((uint32_t)&_end_of_bss_section_ - (uint32_t)&_start_of_bss_section_); size_of_ram_byte++)
+ 80001fa:	697b      	ldr	r3, [r7, #20]
+ 80001fc:	3301      	adds	r3, #1
+ 80001fe:	617b      	str	r3, [r7, #20]
+ 8000200:	4a13      	ldr	r2, [pc, #76]	; (8000250 <ResetHandler+0x70>)
+ 8000202:	4b12      	ldr	r3, [pc, #72]	; (800024c <ResetHandler+0x6c>)
+ 8000204:	1ad3      	subs	r3, r2, r3
+ 8000206:	697a      	ldr	r2, [r7, #20]
+ 8000208:	429a      	cmp	r2, r3
+ 800020a:	d3f1      	bcc.n	80001f0 <ResetHandler+0x10>
+	}
+
+	/* Init .data section */
+	 uint8_t  *puC_DestAddr   = (uint8_t*)&_ram_base_addr_      ;
+ 800020c:	4b11      	ldr	r3, [pc, #68]	; (8000254 <ResetHandler+0x74>)
+ 800020e:	60bb      	str	r3, [r7, #8]
+	 uint8_t  *puC_SourceAddr = (uint8_t*)&_end_of_text_section + 0x08 ;
+ 8000210:	4b11      	ldr	r3, [pc, #68]	; (8000258 <ResetHandler+0x78>)
+ 8000212:	607b      	str	r3, [r7, #4]
+	 uint32_t  uI_SizeOfDataSection = (uint32_t)&_end_of_data_section_ - (uint32_t)&_ram_base_addr_;
+ 8000214:	4a11      	ldr	r2, [pc, #68]	; (800025c <ResetHandler+0x7c>)
+ 8000216:	4b0f      	ldr	r3, [pc, #60]	; (8000254 <ResetHandler+0x74>)
+ 8000218:	1ad3      	subs	r3, r2, r3
+ 800021a:	603b      	str	r3, [r7, #0]
+
+	 for (uint32_t uI_Counter = 0; uI_Counter < uI_SizeOfDataSection; uI_Counter++)
+ 800021c:	2300      	movs	r3, #0
+ 800021e:	613b      	str	r3, [r7, #16]
+ 8000220:	e00a      	b.n	8000238 <ResetHandler+0x58>
+	 {
+		 *(puC_DestAddr + uI_Counter) = *(puC_SourceAddr + uI_Counter);
+ 8000222:	687a      	ldr	r2, [r7, #4]
+ 8000224:	693b      	ldr	r3, [r7, #16]
+ 8000226:	441a      	add	r2, r3
+ 8000228:	68b9      	ldr	r1, [r7, #8]
+ 800022a:	693b      	ldr	r3, [r7, #16]
+ 800022c:	440b      	add	r3, r1
+ 800022e:	7812      	ldrb	r2, [r2, #0]
+ 8000230:	701a      	strb	r2, [r3, #0]
+	 for (uint32_t uI_Counter = 0; uI_Counter < uI_SizeOfDataSection; uI_Counter++)
+ 8000232:	693b      	ldr	r3, [r7, #16]
+ 8000234:	3301      	adds	r3, #1
+ 8000236:	613b      	str	r3, [r7, #16]
+ 8000238:	693a      	ldr	r2, [r7, #16]
+ 800023a:	683b      	ldr	r3, [r7, #0]
+ 800023c:	429a      	cmp	r2, r3
+ 800023e:	d3f0      	bcc.n	8000222 <ResetHandler+0x42>
+	 }
+
+
+
+	main();
+ 8000240:	f7ff ffb6 	bl	80001b0 <main>
+}
+ 8000244:	bf00      	nop
+ 8000246:	3718      	adds	r7, #24
+ 8000248:	46bd      	mov	sp, r7
+ 800024a:	bd80      	pop	{r7, pc}
+ 800024c:	20000190 	.word	0x20000190
+ 8000250:	200004b0 	.word	0x200004b0
+ 8000254:	20000000 	.word	0x20000000
+ 8000258:	0800027c 	.word	0x0800027c
+ 800025c:	20000190 	.word	0x20000190
+
+08000260 <DefaultFaultHandler>:
+
+void DefaultFaultHandler(void)
+{
+ 8000260:	b480      	push	{r7}
+ 8000262:	af00      	add	r7, sp, #0
+	while(1);
+ 8000264:	e7fe      	b.n	8000264 <DefaultFaultHandler+0x4>
+
+08000266 <DefaultHandler>:
+}
+
+void DefaultHandler(void)
+{
+ 8000266:	b480      	push	{r7}
+ 8000268:	af00      	add	r7, sp, #0
+
+}
+ 800026a:	bf00      	nop
+ 800026c:	46bd      	mov	sp, r7
+ 800026e:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8000272:	4770      	bx	lr
 
 Disassembly of section .init:
 
-08000000 <_init>:
- 8000000:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8000002:	bf00      	nop
+08000274 <_init>:
+ 8000274:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8000276:	bf00      	nop
 
 Disassembly of section .fini:
 
-08000004 <_fini>:
- 8000004:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8000006:	bf00      	nop
+08000278 <_fini>:
+ 8000278:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 800027a:	bf00      	nop

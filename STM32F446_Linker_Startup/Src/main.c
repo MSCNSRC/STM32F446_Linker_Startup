@@ -19,12 +19,18 @@
 
 #include <stdint.h>
 
-#if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-#endif
+volatile uint32_t deneme_bss_1[100] = {0}  ;
+volatile uint32_t deneme_bss_2[100] = {0} ;
+volatile uint32_t deneme_data[100] = {0x20, 0x50, 0x50, 0x200};
+
 
 int main(void)
 {
     /* Loop forever */
-	for(;;);
+	for(;;)
+	{
+		deneme_data[10]= deneme_bss_1[10];
+		deneme_bss_1[99]= 0x300;
+		deneme_bss_2[99]= 0x100;
+	}
 }
